@@ -472,9 +472,9 @@ extension CVCalendarDayView {
 extension CVCalendarDayView {
     public func setSelectedWithType(_ type: SelectionType) {
         
-        if isHighlighted {
-            return
-        }
+//        if isHighlighted {
+//            return
+//        }
         
         let appearance = calendarView.appearance
         var backgroundColor: UIColor!
@@ -498,6 +498,7 @@ extension CVCalendarDayView {
             }
             
             if isCurrentDay {
+                moveDotMarkerBack(false, coloring: false)
                 dayLabel?.textColor = appearance?.delegate?.dayLabelColor?(by: weekDay, status: .selected, present: present)
                     ?? appearance?.dayLabelPresentWeekdaySelectedTextColor!
                 dayLabel?.font = appearance?.delegate?.dayLabelFont?(by: weekDay, status: .selected, present: present)
